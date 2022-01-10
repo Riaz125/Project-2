@@ -6,6 +6,9 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
+const indexRoutes = require('./routes/index');
+const { appendFileSync } = require('fs');
+const usersRouter = require('./routes/users');
 
 // load the env vars
 require('dotenv').config();
@@ -50,6 +53,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
+app.use('/users', usersRouter);
 
 
 // invalid request, send 404 page
