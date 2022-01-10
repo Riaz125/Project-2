@@ -5,12 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title><%= title %></title>
 </head>
 <body>
-  <nav>
-    <a href="/signup" <%- title === 'Add Flights' ? 'class="active"' : '' %>>ADD FLIGHT</a>
-    <a href="/login" <%- title === 'All Flights' ? 'class="active"' : '' %>>ALL FLIGHTS</a>
-  </nav>
+    <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <ul class="right">
+              <li>
+                <% if (user) { %>
+                  <a href="/logout">Log Out</a>
+                  <span>Hi <%= user.name %> </span>
+                <% } else { %>
+                  <a href="/auth/google"> Login with Google</a>
+    
+                <% } %>       
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
   <main>
-    <h1><%= title %></h1>
+    <h1>Book Database</h1>
