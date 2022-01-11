@@ -4,17 +4,16 @@
   color: #424748;
 }
 
-.login-nav {
-  text-align: right;
-  margin-right: 25px;
-  margin-top: 10px;
-}
+ /* div.login-nav {
+  float: right;
+} */
 
-.main-nav {
-  text-align: left;
+/* div.main-nav {
+  display:flex;
+  justify-content: flex-start;
   margin-left: 25px;
   margin-top: 10px;
-}
+} */
 
 body {
   margin: 0;
@@ -30,9 +29,9 @@ body > nav {
   grid-area: nav;
   background-color: #8eb9c4;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 20px 0 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 20px 0 30px;
 }
 
 nav > img {

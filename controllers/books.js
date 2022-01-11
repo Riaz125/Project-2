@@ -5,7 +5,8 @@ const Book = require('../models/book');
 module.exports = {
     index,
     new: newBooks,
-    create
+    create,
+    show
 }
 
 function index (req, res) {
@@ -27,6 +28,14 @@ function create(req, res) {
     })
 }
 
+function show(req, res) {
+    Book.findById(req.params.id, function(err, bookDocument) {
+        res.render('books/show', {
+            title: "Book Detail",
+            book: bookDocument
+        });
+    });
+} 
 // function show(req, res) {
 // 	Flight.findById(req.params.id, function(err, book) {
 //         Ticket.find({flight: flight._id}, function(err, tickets) {

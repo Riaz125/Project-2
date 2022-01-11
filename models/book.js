@@ -5,7 +5,7 @@ const bookSchema = new mongoose.Schema({
     author: String,
     genres: [String],
     categories: [String],
-    releaseYear: Number // <-- This property needs to be on your user model for your project
+    releaseYear: Number
     // reviews: [reviewSchema]
   
   }, {

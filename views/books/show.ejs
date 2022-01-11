@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Title:</div>
+    <div><%= book.title %></div>
+    <div>Author:</div>
+    <div><%= book.author %></div>
+    <div>Release Year:</div>
+    <div><%= book.releaseYear %></div>
+    <div>Genres:</div>
+    <% book.genres.forEach(function(g) { %>
+        <tr>
+          <td><%= g %>,</td>
+        </tr>
+    <% }); %>
+    <div>Categories:</div>
+    <% book.categories.forEach(function(c) { %>
+        <tr>
+          <td><%= c %>,</td>
+        </tr>
+    <% }); %>
+  </section> 
+
+<%- include('../partials/footer') %>
