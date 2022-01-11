@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+
+<% if(user && user.admin) { %>
+    <form action="/books" method="POST">
+        <label>Title:
+            <input type="text" name="title">
+        </label>
+        <label>Author</label>
+            <input type="text" name="author">
+        <label>Genres:
+        <input type="text" name="genres">
+        <input type="text" name="genres">
+        <input type="text" name="genres">
+        <input type="text" name="genres">
+        <input type="text" name="genres">
+        <input type="text" name="genres">
+        <input type="text" name="genres">
+        <input type="text" name="genres">
+        <input type="text" name="genres">
+        </label><br>
+        <label>Categories:
+        <input type="text" name="cetegories">
+        <input type="text" name="cetegories">
+        <input type="text" name="cetegories">
+        <input type="text" name="cetegories">
+        <input type="text" name="cetegories">
+        <input type="text" name="cetegories">
+        <input type="text" name="cetegories">
+        </label><br>
+        <label>Release Year:
+        <input type="number" name="releaseYear" min="10" max="9999">
+        </label><br>
+        <input type="submit" value="Add Book">
+    </form>
+<% } else { %>
+    <h1>You don't have permission to access this page...</h1>
+<% } %>
+<%- include('../partials/footer') %>

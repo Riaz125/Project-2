@@ -7,11 +7,14 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <div class="navbar-fixed">
         <nav>
-          <div class="nav-wrapper">
-            <ul class="right">
-              <li>
+          <div id ="main-nav"></div>
+            <a href="/books" <%- title === 'All Books' ? 'class="active"' : '' %>> All Books </a>
+           <% if(user && user.admin) { %>
+            <a href="/books/new" <%- title === 'Add Books' ? 'class="active"' : '' %>> Add Book </a>
+           <% } %>
+          </div>
+          <div id="login-nav">
                 <% if (user) { %>
                   <a href="/logout">Log Out</a>
                   <span>Hi <%= user.name %> </span>
@@ -19,10 +22,6 @@
                   <a href="/auth/google"> Login with Google</a>
     
                 <% } %>       
-              </li>
-            </ul>
           </div>
         </nav>
-      </div>
   <main>
-    <h1>Book Database</h1>

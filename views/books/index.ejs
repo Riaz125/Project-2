@@ -1,6 +1,21 @@
-<%- include('partials/header') %>
+<%- include('../partials/header') %>
 
+<table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% books.forEach(function(b) { %>
+        <tr>
+          <td><%= b.title %></td>
+          <td><%= b.releaseYear %></td>
+          <!-- <td><a href="/books/<%= b._id %>">DETAILS</a></td> -->
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
 
-<%- include('
-
-partials/header') %>
+<%- include('../partials/footer') %>
