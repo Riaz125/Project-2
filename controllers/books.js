@@ -1,5 +1,6 @@
 const { populate } = require('../models/book');
 const Book = require('../models/book');
+const User = require('../models/user');
 // const Review = require('../models/review')
 
 module.exports = {
@@ -28,18 +29,17 @@ function create(req, res) {
     })
 }
 
-function show(req, res) {
-    Book.findById(req.params.id, function(err, bookDocument) {
-        res.render('books/show', {
-            title: "Book Detail",
-            book: bookDocument
-        });
-    });
-} 
 // function show(req, res) {
-// 	Flight.findById(req.params.id, function(err, book) {
-//         Ticket.find({flight: flight._id}, function(err, tickets) {
-// 	    res.render('books/show', { title: 'Book Detail', book: book, reviews: reviews })
+//     Book.findById(req.params.id, function(err, bookDocument) {
+//         res.render('books/show', {
+//             title: "Book Detail",
+//             book: bookDocument
 //         });
-// 	});
-// }
+//     });
+// } 
+
+function show(req, res) {
+	Book.findById(req.params.id, function(err, book) {
+	    res.render('books/show', { title: 'Book Detail', book: book})
+	});
+}
