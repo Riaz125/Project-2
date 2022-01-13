@@ -8,28 +8,30 @@
         <label>Author</label>
             <input type="text" name="author">
         <label>Genres:
-            <select class="custom-select" multiple>
-                <option value="1">Fantasy</option>
-                <option value="2">Sci-Fi</option>
-                <option value="3">Action</option>
-                <option value="4">Thriller</option>
-                <option value="5">Romance</option>
+            <select multiple name="genres">
+                <option name="genres" value="Fantasy">Fantasy</option>
+                <option name="genres" value="Sci-Fi">Sci-Fi</option>
+                <option name="genres" value="Action">Action</option>
+                <option name="genres" value="Thriller">Thriller</option>
+                <option name="genres" value="Romance">Romance</option>
               </select>
         </label><br>
         <label>Categories:
-        <input type="text" name="categories">
-        <input type="text" name="categories">
-        <input type="text" name="categories">
-        <input type="text" name="categories">
-        <input type="text" name="categories">
-        <input type="text" name="categories">
-        <input type="text" name="categories">
+            <div id="new-category">
+                <input type="text" name="categories">
+            </div>
+        <p id="addnew">
+            <button></button><a href="javascript:new_category()">Add More Categories</a></button>
+        </p>
         </label><br>
         <label>Release Year:
         <input type="number" name="releaseYear" min="10" max="9999">
         </label><br>
         <input type="submit" value="Add Book">
     </form>
+    <div id="add-category" style="display:none">
+        <input type="text" name="categories">
+     </div>
 <% } else { %>
     <h1>You don't have permission to access this page...</h1>
 <% } %>
