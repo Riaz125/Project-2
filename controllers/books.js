@@ -39,7 +39,9 @@ function create(req, res) {
 // } 
 
 function show(req, res) {
+    let user = req.user;
 	Book.findById(req.params.id, function(err, book) {
-	    res.render('books/show', { title: 'Book Detail', book: book})
+        console.log(book.reviews.userId);
+	    res.render('books/show', { title: 'Book Detail', book: book, user: user})
 	});
 }

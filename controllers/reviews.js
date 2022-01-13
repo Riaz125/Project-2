@@ -21,6 +21,17 @@ function create(req, res) {
     })
 }
 
-// function edit(req, res) {
-//     Book.review.findById(req.params.id, function(err))
-// }
+function edit(req, res) {
+     Book.findOne({'reviews._id': req.params.id}, function(err, bookDocument){
+
+        const review = bookDocument.reviews.id(req.params.id);
+        if(!review.userId.equals(req.user._id)) return res.redirect(`/books/${bookDocument._id}`);
+
+        review.content = req.body.content;
+        review.rating = req.body.rating;
+
+        bookDocument.save(function(err){
+            res.redirect(`/books/${bookDocument._id}`)
+        });
+     });
+}
