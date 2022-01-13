@@ -2,7 +2,8 @@ const Book = require('../models/book');
 
 module.exports = {
     create,
-    edit
+    edit,
+    delete: deleteReview
 }
 
 function create(req, res) {
@@ -35,3 +36,16 @@ function edit(req, res) {
         });
      });
 }
+
+function deleteReview(req, res) {
+    Book.findOne(
+      {'reviews._id': req.params.id, 'reviews.userId': req.user._id},
+      function(err, book) {
+        if (!book || err) return res.redirect(`/books/${book._id}`);
+        book.reviews.remove(req.params.id);
+        book.save(function(err) {
+          res.redirect(`/books/${book._id}`);
+        });
+      }
+    );
+  }

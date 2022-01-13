@@ -72,6 +72,10 @@
                 </select>
                 <input type="submit" value="Edit Review">
               </form>
+              <form action="/reviews/<%= r.id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">Delete</button>
+              </form>
             <% } %>
           </tr>
         <% }); %>
