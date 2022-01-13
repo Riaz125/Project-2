@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+
+    <form action="/books/advancedsearch" method="GET">
+        <label>Title:
+            <input type="text" name="title">
+        </label>
+        <label>Author</label>
+            <input type="text" name="author">
+        <label>Genres:
+            <select multiple name="genres">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" value="Fantasy">
+                    <label>Fantasy</label>
+                </div>          
+              </select>
+        </label><br>
+        <label>Categories:
+            <div id="new-category">
+                <input type="text" name="categories">
+            </div>
+        <p id="addnew">
+            <button></button><a href="javascript:new_category()">Add More Categories</a></button>
+        </p>
+        </label><br>
+        <label>Release Year:
+        <input type="number" name="releaseYear" min="10" max="9999">
+        </label><br>
+        <input type="submit" value="Add Book">
+    </form>
+    <div id="add-category" style="display:none">
+        <input type="text" name="categories">
+     </div>
+<% } else { %>
+    <h1>You don't have permission to access this page...</h1>
+<% } %>
+
+<%- include('../partials/footer') %>
+
+<div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customCheck1">
+    <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+  </div>
+  
