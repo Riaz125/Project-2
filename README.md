@@ -14,7 +14,7 @@ Books database is an app which serves as a database for books and reviews for bo
 
 ## Getting Started
 
-Click here to use the website (email riazzzz@gmail.com to become an admin): [Connect-Four](https://ultimatebookdatabase.herokuapp.com/books)
+Click here to use the website: [Books-Database](https://ultimatebookdatabase.herokuapp.com/books)
 
 ## Technologies Used
 
