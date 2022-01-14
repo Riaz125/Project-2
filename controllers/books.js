@@ -26,15 +26,6 @@ function newBooks (req, res) {
 }
 
 function create(req, res) {
-    // Book.findOne({'title': req.body.title})
-    // .exec( function(err, foundBook) {
-    //     if (err) { return next(err); }
-
-    //     if (foundBook) {
-    //   
-    //       res.redirect();
-    //     }
-    //     else {
     Book.create(req.body, function(err, bookDocument) {
         res.redirect('/books')
     })

@@ -4,16 +4,16 @@
   color: #424748;
 }
 
- /* div.login-nav {
-  float: right;
-} */
-
-/* div.main-nav {
+nav {
   display:flex;
-  justify-content: flex-start;
-  margin-left: 25px;
-  margin-top: 10px;
-} */
+  justify-content: row;
+}
+
+.navbar-right {
+  align-items: flex-end;
+  padding-left: 1250px;
+  padding-top: 10px;
+}
 
 body {
   margin: 0;
@@ -25,49 +25,19 @@ body {
     "main"
 }
 
-body > nav {
-  grid-area: nav;
-  background-color: #67e1ff;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px 20px 0 30px;
-}
-
-nav > img {
-  width: 34px;
-  object-fit: contain;
-  margin-right: auto;
-}
 
 body > main {
   grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #E8ECEB;
+  background-color: hsl(180, 100%, 93%);
   padding: 20px;
   overflow-y: scroll;
 }
 
 body > main h1:first-child {
   margin-bottom: 50px;
-}
-
-nav > a {
-  margin: 20px;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-nav > a:hover {
-  color: white;
-  background-color: #424748;
-}
-
-nav > a.active {
-  color: white;
 }
 
 #new-form {

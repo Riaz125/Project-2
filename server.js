@@ -9,7 +9,6 @@ var methodOverride = require('method-override');
 
 const indexRoutes = require('./routes/index');
 const { appendFileSync } = require('fs');
-const usersRouter = require('./routes/users');
 const booksRouter = require('./routes/books');
 const reviewsRouter = require('./routes/reviews');
 
@@ -56,7 +55,6 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
-app.use('/users', usersRouter);
 app.use('/books', booksRouter);
 app.use('/', reviewsRouter);
 
