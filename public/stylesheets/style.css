@@ -27,7 +27,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #8eb9c4;
+  background-color: #67e1ff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

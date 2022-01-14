@@ -26,6 +26,7 @@
            <% if(user && user.admin) { %>
             <a href="/books/new" <%- title === 'Add Books' ? 'class="active"' : '' %>> Add Book </a>
            <% } %>
+           <a href="/books/advancedsearch" <%- title === 'All Books' ? 'class="active"' : '' %>> Advanced Search </a>
           </div>
           <div class="login-nav">
                 <% if (user) { %>

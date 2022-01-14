@@ -1,43 +1,44 @@
 <%- include('../partials/header') %>
 
-    <form action="/books/advancedsearch" method="GET">
-        <label>Title:
-            <input type="text" name="title">
-        </label>
-        <label>Author</label>
-            <input type="text" name="author">
+    <form action="/books/advancedsearch" method="POST">
         <label>Genres:
-            <select multiple name="genres">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" value="Fantasy">
+                    <input type="checkbox" name="genres" value="Fantasy">
                     <label>Fantasy</label>
-                </div>          
-              </select>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="genres" value="Sci-Fi">
+                    <label>Sci-Fi</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="genres" value="Action">
+                    <label>Action</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="genres" value="Thriller">
+                    <label>Thriller</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="genres" value="Romance">
+                    <label>Romance</label>
+                </div>  
         </label><br>
         <label>Categories:
             <div id="new-category">
-                <input type="text" name="categories">
             </div>
         <p id="addnew">
-            <button></button><a href="javascript:new_category()">Add More Categories</a></button>
+            <a href="javascript:new_category()">Add More Categories</a>
         </p>
         </label><br>
         <label>Release Year:
-        <input type="number" name="releaseYear" min="10" max="9999">
+        <p>Between</p>
+        <input type="number" name="releaseYear" min="10" max="9999" value="0">
         </label><br>
-        <input type="submit" value="Add Book">
+        <p>And</p>
+        <input type="number" name="releaseYear" min="10" max="9999" value="3000">
+        <input type="submit" value="Search">
     </form>
     <div id="add-category" style="display:none">
         <input type="text" name="categories">
      </div>
-<% } else { %>
-    <h1>You don't have permission to access this page...</h1>
-<% } %>
-
 <%- include('../partials/footer') %>
-
-<div class="custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="customCheck1">
-    <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
-  </div>
-  
